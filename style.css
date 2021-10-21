@@ -10,6 +10,10 @@
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
+  transition: transform 0.3s ease;
+}
+body.show-nav {
+  transform: translateX(200px);
 }
 nav {
   background-color: var(--primary-color);
@@ -102,6 +106,9 @@ main {
   right: 0;
   bottom: 0;
 }
+.modal-container.show-modal {
+  display: block;
+}
 .modal {
   background-color: #fff;
   border-radius: 5px;
@@ -113,6 +120,7 @@ main {
   transform: translate(-50%, -50%);
   max-width: 100%;
   width: 400px;
+  animation: modalopen var(--modal-duration);
 }
 .modal-header {
   background-color: var(--primary-color);
@@ -148,4 +156,14 @@ main {
 .submit-btn {
   display: block;
   margin: auto;
+  width: 140px;
+  font-size: 110%;
+}
+@keyframes modalopen {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
